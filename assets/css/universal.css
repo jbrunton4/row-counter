@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: #3d3d3d;
+}
+
+body div.centered {
+    width: 80dvw;
+    margin-left: 10dvw;
+    margin-top: 20dvh;
+    height: 20px;
+
+    text-align: center;
+}
+
+body div.centered div.flex {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+body div.centered div.flex button.counter-adjust-btn {
+    height: 15vh;
+    width: 15vh;
+    border: none;
+    font-size: 15vh;
+    background: none;
+}
+
+body div.centered p {
+    margin-top: 3vh;
+    width: 100%;
+    text-align: justify;
+}
+
+body div.centered div.settings-container > button {
+    height: 40px;
+    min-width: 40px;
+    margin: 3px;
+    margin-top: 2vh;
+    border: none;
+
+    border-radius: 12px;
+background: #3d3d3d;
+box-shadow:  5px 5px 10px #303030,
+             -5px -5px 10px #4a4a4a;
+}
+
+body div.centered div.settings-container > input {
+    border: none;
+    height: 30px;
+    border-radius: 12px !important;
+    background: #3d3d3d !important;
+    box-shadow: inset 5px 5px 10px #303030,
+                inset -5px -5px 10px #4a4a4a !important;
+}
+
+body div.centered button.warning-btn {
+    margin-top: 10vh;
+    padding: 1vh;
+    width: 80%;
+    color: #ff0000;
+    font-size: 3vh;
+
+    border: none;
+    border-radius: 12px;
+background: #3d3d3d;
+box-shadow:  5px 5px 10px #303030,
+             -5px -5px 10px #4a4a4a;
+}
+
+body footer {
+
+    position: fixed;
+    bottom: 8vh;
+
+    text-align: center;
+    height: 5vh;
+    width: calc(100dvw - 6vh);
+    padding: 3vh;
+    font-size: 2vh;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+body footer button.page-btn {
+    font-size: 5vh;
+    color: #ffffff;
+    width: 20vw;
+    height: 20vw;
+
+    border: none;
+    border-radius: 10%;
+    background: #3d3d3d;
+    box-shadow:  12px 12px 24px #303030,
+                 -12px -12px 24px #4a4a4a;
+}
+
+body footer button.page-btn.active,
+body footer button.page-btn:hover {
+    border-radius: 10%;
+    background: #3d3d3d;
+    box-shadow: inset 12px 12px 24px #303030,
+                inset -12px -12px 24px #4a4a4a;
+}

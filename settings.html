@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <title>Row Counter: Home</title>
+
+        <meta charset="utf-8" />
+        <meta name="designer" content="Josh Brunton, bruntonjoshua9@gmail.com" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="language" content="EN" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/universal.css" />
+
+        <script src="assets/js/app.js" defer></script>
+        <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    </head>
+    <body>
+
+        <div class="centered">
+
+            <h1>Settings</h1>
+
+            <div class="settings-container">
+                <span>Set rows</span>
+                <input type="number" id="rowCountInput" />
+                <button onclick="setRows();">OK</button>
+
+                <br />
+
+                <span>Set time</span>
+                <input type="datetime-local" id="dateInput" />
+                <button onclick="setTime();">OK</button>
+            </div>
+
+            <button class="warning-btn" onclick="resetData();">
+                Reset Data
+            </button>
+
+
+
+        </div>
+
+        <footer>
+            <button
+                    class="page-btn"
+                    onclick="window.location.href = 'about.html';">
+                <span class="iconify" data-icon="mdi:help"></span>
+            </button>
+
+            <button
+                    class="page-btn"
+                    onclick="window.location.href = 'index.html';">
+                <span class="iconify" data-icon="mdi:counter"></span>
+            </button>
+
+            <button
+                    class="page-btn active"
+                    onclick="window.location.href = 'settings.html';">
+                <span class="iconify" data-icon="mdi:cog"></span>
+            </button>
+        </footer>
+
+    </body>
+</html>
