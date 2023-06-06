@@ -2,22 +2,23 @@ let rows = 0;
 let lastClicked = new Date();
 
 function onLoad() {
+    /*
+    * Runs on script startup - make sure to defer this script in the HTML file!
+    */
 
-    // update every second
-    setInterval(update, 1000);
+    setInterval(update, 1000);  // set an interval to run the screen update function every second
 
-    // get the current cookies from the browser
-    const allCookies = getObjectFromCookies(document.cookie);
-    console.log(allCookies);
+    const allCookies = getObjectFromCookies(document.cookie); // get cookies from the browser
 
-    // set the initial values of rows and lastClicked
+    // set the initial values of rows and lastClicked from the cookies
     rows = allCookies.rows;
     lastClicked = allCookies.lastClicked;
 
+    // set defaults in case there were no cookies
     if (rows === undefined) rows = 0;
     if (lastClicked === undefined) lastClicked = "Never";
 
-    // update the elements on screen
+    // update, to make TTL faster
     update();
 }
 
@@ -43,6 +44,11 @@ function getObjectFromCookies(str) {
 }
 
 function calculateElapsedTimeSince(x) {
+    /*
+    * Takes a Date object
+    * Outputs time elapsed as a string
+    * E.g. new Date() -> "0 seconds ago"
+    */
     var currentTime = new Date(); // Get the current time
     var timeDifference = currentTime - x; // Calculate the difference in milliseconds
 
@@ -84,6 +90,11 @@ function calculateElapsedTimeSince(x) {
 }
 
 function update() {
+    /*
+    * Sets the cookies and
+    * Update elements on screen
+    */
+
     // set the cookies
     document.cookie = `rows=${rows}; SameSite=None; Secure`;
     document.cookie = `lastClicked=${lastClicked}; SameSite=None; Secure`;
@@ -96,7 +107,7 @@ function update() {
         } else {
             document.getElementById("lastPressed").innerHTML = calculateElapsedTimeSince(new Date(lastClicked));
          }
-    } catch (err) {}
+    } catch (err) {}  // catch in case running on a page that does not have the elements
 
 }
 
@@ -121,18 +132,23 @@ function decrement() {
 }
 
 function setRows() {
+    // sets the value of Rows, then immediately updates
     rows = document.getElementById("rowCountInput").value;
     update();
     alert(`Set rows to ${rows}.`)
 }
 
 function setTime() {
+    // sets the value of setTime, then immediately updates
     lastClicked = new Date(document.getElementById("dateInput").value);
     update();
     alert(`Set last updated to ${calculateElapsedTimeSince(new Date(lastClicked))}.`)
 }
 
 function resetData() {
+
+    // set both important cookies to Undefined
+
     var confirmation = confirm("Delete data? This will erase your count and last changed time!");
 
     if (confirmation) {
